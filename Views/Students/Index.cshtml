@@ -1,0 +1,84 @@
+﻿@model IEnumerable<IsmasPrototype.Models.Student>
+
+@{
+    ViewData["Title"] = "Студенти";
+}
+
+<div class="student-page">
+
+    <div class="page-header">
+        <div>
+            <h1>Студенти</h1>
+            <p>Търсене и управление на участници в Work and Travel програма</p>
+        </div>
+
+        <div class="header-actions">
+            <a asp-action="Create" class="btn btn-primary">Добави студент</a>
+        </div>
+    </div>
+
+    <div class="dashboard-card">
+        <form asp-action="Index" method="get">
+            <label class="search-label">Търсене на студент</label>
+
+            <div class="search-row">
+                <input type="text"
+                       name="searchString"
+                       value="@ViewData["CurrentFilter"]"
+                       class="form-control"
+                       placeholder="Име, фамилия, телефон, имейл или ЕГН..." />
+
+                <button type="submit" class="btn btn-primary">Търси</button>
+
+                <a asp-action="Index" class="btn btn-light">Изчисти</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="dashboard-card">
+        <div class="section-title-row">
+            <h2>Резултати</h2>
+            <span class="result-count">@Model.Count() намерени</span>
+        </div>
+
+        <div class="student-list">
+            @if (!Model.Any())
+            {
+                <div class="empty-state">
+                    Няма намерени студенти.
+                </div>
+            }
+            else
+            {
+                foreach (var student in Model)
+                {
+                    <div class="student-result-card">
+                        <div class="student-main-info">
+                            <div class="student-avatar">
+                                @student.FirstNameBg.Substring(0, 1)@student.LastNameBg.Substring(0, 1)
+                            </div>
+
+                            <div>
+                                <h3>@student.FirstNameBg @student.MiddleNameBg @student.LastNameBg</h3>
+                                <p>@student.FirstNameEn @student.LastNameEn</p>
+                            </div>
+                        </div>
+
+                        <div class="student-meta">
+                            <span>Сезон: <strong>@student.Season</strong></span>
+                            <span>Офис: <strong>@student.Office</strong></span>
+                            <span class="status-badge">@student.Status</span>
+                        </div>
+
+                        <div class="student-actions">
+                            <a asp-action="Details" asp-route-id="@student.Id" class="btn btn-primary">
+                                Отвори профил
+                            </a>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+</div>

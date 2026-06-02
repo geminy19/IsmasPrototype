@@ -1,0 +1,263 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+body {
+    background-color: #f5f7fb;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #ddd;
+}
+
+.container {
+    margin-top: 25px;
+}
+
+h1 {
+    font-weight: 600;
+    color: #263238;
+    margin-bottom: 20px;
+}
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: #3f51b5;
+    border-color: #3f51b5;
+}
+
+.btn-success {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+}
+
+.card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.student-page {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+    .page-header h1 {
+        font-size: 38px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .page-header p {
+        color: #666;
+    }
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+    .dashboard-card h2 {
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    grid-column: span 3;
+}
+
+.form-control,
+.form-select {
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+}
+
+.btn-primary {
+    background: #4f46e5;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 22px;
+}
+
+.btn-light {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 12px 22px;
+}
+
+body {
+    background: #f4f6fb;
+}
+.section-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.checkbox-row {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-top: 34px;
+}
+
+    .checkbox-row input {
+        width: 20px;
+        height: 20px;
+    }
+
+.conditional-box {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 16px;
+    background: #f7f8fc;
+    border: 1px solid #e5e7eb;
+}
+
+    .conditional-box h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+.bottom-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 30px 0 60px;
+}
+.search-label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 12px;
+}
+
+.result-count {
+    color: #666;
+    font-weight: 500;
+}
+
+.student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.student-result-card {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.student-main-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.student-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #4f46e5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.student-main-info h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.student-main-info p {
+    margin: 4px 0 0;
+    color: #666;
+}
+
+.student-meta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.status-badge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.empty-state {
+    padding: 30px;
+    text-align: center;
+    color: #777;
+    background: #f7f8fc;
+    border-radius: 14px;
+}

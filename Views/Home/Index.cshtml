@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "ISMAS Prototype";
+}
+
+<div class="text-center mb-4">
+    <h1>ISMAS Prototype</h1>
+    <p class="lead">Прототип на уеб система за управление на студенти по Work and Travel програма</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card p-4">
+            <h4>Студенти</h4>
+            <p>Управление на лични данни, сезон, офис и статус.</p>
+            <a class="btn btn-primary" asp-controller="Students" asp-action="Index">Отвори</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4">
+            <h4>Такси</h4>
+            <p>Проследяване на плащания, депозити и бележки.</p>
+            <a class="btn btn-primary" asp-controller="Payments" asp-action="Index">Отвори</a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card p-4">
+            <h4>Работни списъци</h4>
+            <p>Списъци по спонсор, работодател, щат и сезон.</p>
+            <a class="btn btn-primary" asp-controller="WorkLists" asp-action="Index">Отвори</a>
+        </div>
+    </div>
+</div>

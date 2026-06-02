@@ -1,0 +1,530 @@
+﻿@model IsmasPrototype.Models.Student
+
+@{
+    ViewData["Title"] = "Нов студент";
+}
+
+<div class="student-page">
+
+    <div class="page-header">
+        <div>
+            <h1>Нов студент</h1>
+            <p>Създаване на участник за Work and Travel програма</p>
+        </div>
+
+        <div class="header-actions">
+            <a asp-action="Index" class="btn btn-light">Назад</a>
+            <button type="submit" form="studentForm" class="btn btn-primary">Запази студент</button>
+        </div>
+    </div>
+
+    <form asp-action="Create" id="studentForm">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <!-- ЛИЧНА ИНФОРМАЦИЯ -->
+        <div class="dashboard-card">
+            <h2>Лична информация</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="FirstNameBg"></label>
+                    <input asp-for="FirstNameBg" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MiddleNameBg"></label>
+                    <input asp-for="MiddleNameBg" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LastNameBg"></label>
+                    <input asp-for="LastNameBg" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="FirstNameEn"></label>
+                    <input asp-for="FirstNameEn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MiddleNameEn"></label>
+                    <input asp-for="MiddleNameEn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="LastNameEn"></label>
+                    <input asp-for="LastNameEn" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DateOfBirth"></label>
+                    <input asp-for="DateOfBirth" type="date" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NationalIdNumber"></label>
+                    <input asp-for="NationalIdNumber" class="form-control" maxlength="10" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Age"></label>
+                    <input asp-for="Age" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Gender"></label>
+                    <select asp-for="Gender" class="form-select">
+                        <option value="">Избери</option>
+                        <option>Мъж</option>
+                        <option>Жена</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="MaritalStatus"></label>
+                    <select asp-for="MaritalStatus" class="form-select">
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Divorced</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PhoneCountryCode"></label>
+                    <input asp-for="PhoneCountryCode" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PhoneNumber"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                </div>
+
+                <div class="form-group full-width">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ДОКУМЕНТИ -->
+        <div class="dashboard-card">
+            <h2>Документи</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="CitizenshipCountry"></label>
+                    <input asp-for="CitizenshipCountry" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IdCardNumber"></label>
+                    <input asp-for="IdCardNumber" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IdCardIssueDate"></label>
+                    <input asp-for="IdCardIssueDate" type="date" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="IdCardIssuedBy"></label>
+                    <input asp-for="IdCardIssuedBy" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PassportNumber"></label>
+                    <input asp-for="PassportNumber" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PassportIssueDate"></label>
+                    <input asp-for="PassportIssueDate" type="date" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- РОЖДЕНИ ДАННИ -->
+        <div class="dashboard-card">
+            <h2>Рождени данни</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="BirthCity"></label>
+                    <input asp-for="BirthCity" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="BirthCountry"></label>
+                    <input asp-for="BirthCountry" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Nationality"></label>
+                    <input asp-for="Nationality" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ПОСТОЯНЕН АДРЕС -->
+        <div class="dashboard-card">
+            <h2>Постоянен адрес по лична карта</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="PermanentCountry"></label>
+                    <input asp-for="PermanentCountry" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentCity"></label>
+                    <input asp-for="PermanentCity" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentVillage"></label>
+                    <input asp-for="PermanentVillage" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentPostalCode"></label>
+                    <input asp-for="PermanentPostalCode" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentDistrict"></label>
+                    <input asp-for="PermanentDistrict" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentStreet"></label>
+                    <input asp-for="PermanentStreet" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentStreetNumber"></label>
+                    <input asp-for="PermanentStreetNumber" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentBlock"></label>
+                    <input asp-for="PermanentBlock" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentEntrance"></label>
+                    <input asp-for="PermanentEntrance" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentFloor"></label>
+                    <input asp-for="PermanentFloor" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermanentApartment"></label>
+                    <input asp-for="PermanentApartment" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- АДРЕС НА ПРЕБИВАВАНЕ -->
+        <div class="dashboard-card">
+            <div class="section-title-row">
+                <h2>Адрес на пребиваване</h2>
+                <button type="button" class="btn btn-light" onclick="copyPermanentAddress()">
+                    Копирай постоянния адрес
+                </button>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="CurrentCountry"></label>
+                    <input asp-for="CurrentCountry" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentCity"></label>
+                    <input asp-for="CurrentCity" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentVillage"></label>
+                    <input asp-for="CurrentVillage" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentPostalCode"></label>
+                    <input asp-for="CurrentPostalCode" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentDistrict"></label>
+                    <input asp-for="CurrentDistrict" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentStreet"></label>
+                    <input asp-for="CurrentStreet" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentStreetNumber"></label>
+                    <input asp-for="CurrentStreetNumber" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentBlock"></label>
+                    <input asp-for="CurrentBlock" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentEntrance"></label>
+                    <input asp-for="CurrentEntrance" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentFloor"></label>
+                    <input asp-for="CurrentFloor" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CurrentApartment"></label>
+                    <input asp-for="CurrentApartment" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- СПЕШЕН КОНТАКТ -->
+        <div class="dashboard-card">
+            <h2>Лице за спешна връзка</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="EmergencyFirstName"></label>
+                    <input asp-for="EmergencyFirstName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EmergencyLastName"></label>
+                    <input asp-for="EmergencyLastName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EmergencyPhoneCountryCode"></label>
+                    <input asp-for="EmergencyPhoneCountryCode" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="EmergencyPhoneNumber"></label>
+                    <input asp-for="EmergencyPhoneNumber" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <!-- УНИВЕРСИТЕТ -->
+        <div class="dashboard-card">
+            <h2>Информация за университет</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="UniversityCountry"></label>
+                    <input asp-for="UniversityCountry" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UniversityCity"></label>
+                    <input asp-for="UniversityCity" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UniversityName"></label>
+                    <input asp-for="UniversityName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Major"></label>
+                    <input asp-for="Major" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UniversityStartDate"></label>
+                    <input asp-for="UniversityStartDate" type="date" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UniversityEndDate"></label>
+                    <input asp-for="UniversityEndDate" type="date" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DegreeType"></label>
+                    <select asp-for="DegreeType" class="form-select">
+                        <option value="">Избери</option>
+                        <option>Bachelor</option>
+                        <option>Master</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-row">
+                    <input asp-for="HasPreviousEducation" />
+                    <label asp-for="HasPreviousEducation"></label>
+                </div>
+            </div>
+
+            <div class="conditional-box">
+                <h3>Предишно образование</h3>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label asp-for="PreviousUniversityName"></label>
+                        <input asp-for="PreviousUniversityName" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PreviousMajor"></label>
+                        <input asp-for="PreviousMajor" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PreviousEducationPeriod"></label>
+                        <input asp-for="PreviousEducationPeriod" class="form-control" placeholder="пример: 2020 - 2024" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PreviousDegreeType"></label>
+                        <select asp-for="PreviousDegreeType" class="form-select">
+                            <option value="">Избери</option>
+                            <option>Bachelor</option>
+                            <option>Master</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ВИЗИ -->
+        <div class="dashboard-card">
+            <h2>Информация за предишни визи</h2>
+
+            <div class="form-grid">
+                <div class="form-group checkbox-row">
+                    <input asp-for="HasAppliedForVisaBefore" />
+                    <label asp-for="HasAppliedForVisaBefore"></label>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PreviousJ1VisaCount"></label>
+                    <input asp-for="PreviousJ1VisaCount" class="form-control" />
+                </div>
+
+                <div class="form-group full-width">
+                    <label asp-for="PreviousVisaNotes"></label>
+                    <textarea asp-for="PreviousVisaNotes" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- СИСТЕМНА ИНФОРМАЦИЯ -->
+        <div class="dashboard-card">
+            <h2>Системна информация</h2>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label asp-for="Season"></label>
+                    <input asp-for="Season" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Office"></label>
+                    <select asp-for="Office" class="form-select">
+                        <option>Sofia</option>
+                        <option>Plovdiv</option>
+                        <option>Varna</option>
+                        <option>Burgas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Status"></label>
+                    <select asp-for="Status" class="form-select">
+                        <option>Active</option>
+                        <option>Pending</option>
+                        <option>Inactive</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+            <a asp-action="Index" class="btn btn-light">Назад</a>
+            <button type="submit" class="btn btn-primary">Запази студент</button>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        const transliterationMap = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd',
+            'е': 'e', 'ж': 'zh', 'з': 'z', 'и': 'i', 'й': 'y',
+            'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o',
+            'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u',
+            'ф': 'f', 'х': 'h', 'ц': 'ts', 'ч': 'ch', 'ш': 'sh',
+            'щ': 'sht', 'ъ': 'a', 'ь': '', 'ю': 'yu', 'я': 'ya'
+        };
+
+        function transliterate(text) {
+            return text.split('').map(char => {
+                const lower = char.toLowerCase();
+                const translated = transliterationMap[lower] ?? char;
+
+                if (char === char.toUpperCase()) {
+                    return translated.charAt(0).toUpperCase() + translated.slice(1);
+                }
+
+                return translated;
+            }).join('');
+        }
+
+        function setupTransliteration(bgId, enId) {
+            const bgInput = document.getElementById(bgId);
+            const enInput = document.getElementById(enId);
+
+            if (!bgInput || !enInput) return;
+
+            bgInput.addEventListener('input', function () {
+                if (!enInput.dataset.manuallyEdited) {
+                    enInput.value = transliterate(bgInput.value);
+                }
+            });
+
+            enInput.addEventListener('input', function () {
+                enInput.dataset.manuallyEdited = "true";
+            });
+        }
+
+        setupTransliteration("FirstNameBg", "FirstNameEn");
+        setupTransliteration("MiddleNameBg", "MiddleNameEn");
+        setupTransliteration("LastNameBg", "LastNameEn");
+
+        function copyPermanentAddress() {
+            document.getElementById("CurrentCountry").value = document.getElementById("PermanentCountry").value;
+            document.getElementById("CurrentCity").value = document.getElementById("PermanentCity").value;
+            document.getElementById("CurrentVillage").value = document.getElementById("PermanentVillage").value;
+            document.getElementById("CurrentPostalCode").value = document.getElementById("PermanentPostalCode").value;
+            document.getElementById("CurrentDistrict").value = document.getElementById("PermanentDistrict").value;
+            document.getElementById("CurrentStreet").value = document.getElementById("PermanentStreet").value;
+            document.getElementById("CurrentStreetNumber").value = document.getElementById("PermanentStreetNumber").value;
+            document.getElementById("CurrentBlock").value = document.getElementById("PermanentBlock").value;
+            document.getElementById("CurrentEntrance").value = document.getElementById("PermanentEntrance").value;
+            document.getElementById("CurrentFloor").value = document.getElementById("PermanentFloor").value;
+            document.getElementById("CurrentApartment").value = document.getElementById("PermanentApartment").value;
+        }
+    </script>
+}
