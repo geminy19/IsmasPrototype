@@ -34,7 +34,12 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Student.FirstNameBg)
+                    <a class="student-link"
+                       asp-controller="Students"
+                       asp-action="Details"
+                       asp-route-id="@item.StudentId">
+                        @item.Student.FirstNameBg @item.Student.MiddleNameBg @item.Student.LastNameBg
+                    </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Amount)

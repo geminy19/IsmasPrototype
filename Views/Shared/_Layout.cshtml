@@ -1,57 +1,58 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - IsmasPrototype</title>
+    <title>@ViewData["Title"] - ISMAS</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/IsmasPrototype.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-4">
-            <div class="container">
-                <a class="navbar-brand fw-bold" asp-area="" asp-controller="Home" asp-action="Index">
-                    ISMAS Prototype
+    <header class="main-header">
+        <div class="header-inner">
+            <a asp-controller="Home" asp-action="Index" class="brand-logo">
+                <img src="~/images/integral-logo.png" alt="Integral" />
+            </a>
+
+            @{
+                var controller = ViewContext.RouteData.Values["controller"]?.ToString();
+            }
+
+            <nav class="top-nav">
+                <a asp-controller="Home"
+                   asp-action="Index"
+                   class="@(controller == "Home" ? "active" : "")">
+                    Начало
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a asp-controller="Students"
+                   asp-action="Index"
+                   class="@(controller == "Students" ? "active" : "")">
+                    Студенти
+                </a>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Начало</a>
-                        </li>
+                <a asp-controller="Payments"
+                   asp-action="Index"
+                   class="@(controller == "Payments" ? "active" : "")">
+                    Такси
+                </a>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Students" asp-action="Index">Студенти</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="WorkLists" asp-action="Index">Работни списъци</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top text-muted mt-5 py-3">
-        <div class="container">
-            &copy; 2026 - ISMAS Prototype
+                <a asp-controller="WorkLists"
+                   asp-action="Index"
+                   class="@(controller == "WorkLists" ? "active" : "")">
+                    Работни списъци
+                </a>
+            </nav>
         </div>
-    </footer>
+    </header>
+
+    <main class="page-wrapper">
+        @RenderBody()
+    </main>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

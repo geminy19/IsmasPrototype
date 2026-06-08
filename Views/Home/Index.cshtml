@@ -1,34 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "ISMAS Prototype";
+    ViewData["Title"] = "Начало";
 }
 
-<div class="text-center mb-4">
-    <h1>ISMAS Prototype</h1>
-    <p class="lead">Прототип на уеб система за управление на студенти по Work and Travel програма</p>
-</div>
+<div class="home-grid">
+    <section class="dashboard-panel">
+        <h1>Дашборд</h1>
+        <div class="section-line"></div>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="card p-4">
-            <h4>Студенти</h4>
-            <p>Управление на лични данни, сезон, офис и статус.</p>
-            <a class="btn btn-primary" asp-controller="Students" asp-action="Index">Отвори</a>
+        <div class="empty-dashboard">
+            <!-- Тук после ще добавим статистики и информация -->
         </div>
-    </div>
+    </section>
 
-    <div class="col-md-4">
-        <div class="card p-4">
-            <h4>Такси</h4>
-            <p>Проследяване на плащания, депозити и бележки.</p>
-            <a class="btn btn-primary" asp-controller="Payments" asp-action="Index">Отвори</a>
-        </div>
-    </div>
+    <aside class="home-actions">
+        <a asp-controller="Students" asp-action="Index" class="home-action-card">
+            Студенти
+        </a>
 
-    <div class="col-md-4">
-        <div class="card p-4">
-            <h4>Работни списъци</h4>
-            <p>Списъци по спонсор, работодател, щат и сезон.</p>
-            <a class="btn btn-primary" asp-controller="WorkLists" asp-action="Index">Отвори</a>
-        </div>
-    </div>
+        <a asp-controller="Payments" asp-action="Index" class="home-action-card">
+            Такси
+        </a>
+
+        <a asp-controller="WorkLists" asp-action="Index" class="home-action-card">
+            Работни списъци
+        </a>
+    </aside>
 </div>
